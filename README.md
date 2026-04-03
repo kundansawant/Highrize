@@ -1,10 +1,3 @@
-<div align="center">
-  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-  [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-  [![PyPI](https://img.shields.io/badge/pypi-v0.1.0-orange.svg)](https://pypi.org/project/highrize/)
-  [![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)]()
-</div>
-
 # HighRize
 
 **Universal AI token and cost compressor** — the high-performance middle-layer for your AI stack.  
