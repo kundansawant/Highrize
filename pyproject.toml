@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "highrize"
+version = "0.1.0"
+description = "Universal AI token and cost compressor - works with any API or local model"
+readme = "README.md"
+authors = [
+    { name = "HighRize Team" }
+]
+license = { text = "MIT" }
+requires-python = ">=3.9"
+keywords = ["llm", "tokens", "compression", "openai", "anthropic", "ai", "cost"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+# Core has NO required deps — everything is optional
+dependencies = []
+
+[project.optional-dependencies]
+text = []                                           # built-in, no deps
+image = ["Pillow>=10.0"]
+video = ["opencv-python-headless>=4.8", "Pillow>=10.0"]
+audio = ["openai-whisper", "pydub"]
+audio-fast = ["faster-whisper", "pydub"]
+document = ["pdfplumber", "beautifulsoup4", "python-docx"]
+openai = ["openai>=1.0"]
+anthropic = ["anthropic>=0.25"]
+soft = ["transformers>=4.35", "torch>=2.0"]
+cache-redis = ["redis>=5.0"]
+middleware = ["fastapi>=0.100", "starlette>=0.27"]
+tokens = ["tiktoken>=0.5"]
+all = [
+    "Pillow>=10.0",
+    "opencv-python-headless>=4.8",
+    "pdfplumber",
+    "beautifulsoup4",
+    "python-docx",
+    "openai>=1.0",
+    "anthropic>=0.25",
+    "tiktoken>=0.5",
+    "fastapi>=0.100",
+    "starlette>=0.27",
+]
+
+[project.scripts]
+highrize = "highrize.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["highrize*"]
